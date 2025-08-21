@@ -215,7 +215,7 @@ const OrdersPage = forwardRef(({ scrollToRecent = false }, ref) => {
                       📅 {format(new Date(order.createdAt), 'MMM d, yyyy • h:mm a')}
                       {order.status !== 'delivered' && order.status !== 'cancelled' && (
                         <span className="ml-2 text-sm bg-white/20 px-2 py-0.5 rounded-full">
-                          🕒 Delivered At: {format(new Date(new Date(order.createdAt).getTime() + 30 * 60000), 'h:mm a')}
+                          🕒 Delivered Within : {format(new Date(new Date(order.createdAt).getTime() + 30 * 60000), 'h:mm a')}
                         </span>
                       )}
                     </p>

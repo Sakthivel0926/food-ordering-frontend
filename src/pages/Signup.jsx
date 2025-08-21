@@ -67,6 +67,7 @@ const Signup = () => {
         )}
 
         <form onSubmit={handleSignup} className="space-y-4">
+          <label className="block text-m font-medium ">Name</label>
           <input
             type="text"
             name="name"
@@ -76,6 +77,7 @@ const Signup = () => {
             onChange={handleChange}
             required
           />
+          <label className="block text-m font-medium mb-0">Email</label>
           <input
             type="email"
             name="email"

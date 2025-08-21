@@ -8,7 +8,7 @@ const FoodModal = ({ isOpen, onClose, onSubmit, initialData, categories }) => {
     price: "",
     image: "",
     category: "",
-    stock: 10, // Default stock value
+    stock: 1, // Default stock value
   });
 
   const [previewImage, setPreviewImage] = useState("");
@@ -25,7 +25,7 @@ const FoodModal = ({ isOpen, onClose, onSubmit, initialData, categories }) => {
   }, [isOpen, initialData]);
 
   const resetForm = () => {
-    setFoodData({ name: "", price: "", image: "", category: "", stock: 10 });
+    setFoodData({ name: "", price: "", image: "", category: "", stock: 1 });
     setPreviewImage("");
   };
 
