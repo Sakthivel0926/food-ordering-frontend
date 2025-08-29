@@ -30,6 +30,8 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isZoomed, isDrawerMode, onNavigat
     }
   };
 
+  const token = localStorage.getItem("token");
+
   return (
     <div
       className={`sidebar h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-[#444] scrollbar-track-transparent
@@ -59,6 +61,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isZoomed, isDrawerMode, onNavigat
           >
             {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
           </button>
+          
         )}
       </div>
 
@@ -90,7 +93,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isZoomed, isDrawerMode, onNavigat
       </nav>
 
       {/* Logout */}
-      <div className="p-3 mt-auto">
+      {token && (<div className="p-3 mt-auto">
         <button onClick={logout}
           className={`flex items-center w-full justify-${isCollapsed ? "center" : "start"} gap-3 py-2 px-3 rounded-md 
                 text-[#D4AF37] border border-[#2A2A2A] bg-[#1A1A1A] hover:bg-[#B22222] hover:text-white 
@@ -100,7 +103,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar, isZoomed, isDrawerMode, onNavigat
           <LogOut size={22} />
           <span className={`${isCollapsed ? "hidden" : "text-md font-medium"}`}>Logout</span>
         </button>
-      </div>
+      </div>)}
 
     </div>
   );
